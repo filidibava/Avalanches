@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Numero massimo di processi paralleli (modifica secondo le tue CPU)
+# To parallelize choose the number of jobs
 MAX_JOBS=10
 
-# Definizione delle triple (L, P, Q)
+# Declare eta,nu,rho
 declare -a PARAMS=(
     "0.2 4 3"
 )
@@ -22,7 +22,7 @@ execute_param() {
     # Array per i PID dei processi figli
     declare -a child_pids=()
     
-    # Loop su seed e n - parallelizzato per ogni combinazione seed/n
+    # Loop over the seeds and N_0
     for seed in 123456; do
         for n in 60 70 80 90 ; do
             {
